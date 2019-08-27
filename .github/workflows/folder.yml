@@ -3,7 +3,7 @@ name: FOLDER
 on:
   pull_request:
     paths:
-    - 'folder/abc.txt'
+    - 'folder/*'
 
 jobs:
   build:
