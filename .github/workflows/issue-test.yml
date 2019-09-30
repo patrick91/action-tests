@@ -1,0 +1,17 @@
+name: ISSUE TEST
+
+on:
+  issues:
+    types: [opened, edited, milestoned]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Run tests
+        uses: ./.github/tester-action
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
